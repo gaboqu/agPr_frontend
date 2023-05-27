@@ -1,0 +1,127 @@
+<div class="bgbanner">
+    <div class="container">
+      <nav class="flex">
+        <div class="logo">
+          <ul class="flex">
+            <li class="logo"><img src="assets/img/ar-prog_logo.png" alt="" /></li>
+            <li class="titulo">Argentina Programa</li>
+          </ul>
+        </div>
+
+        <div class="menu">
+          <ul class="flex items">
+            <li><a href="https://api.whatsapp.com/send?phone=3454013565" target="blank"><img src="assets/img/incon_wapp.png"
+                  alt="" /></a></li>
+            <li><a href="https://github.com/gaboqu" target="blank"><img src="assets/img/icon_git.png" alt="" /></a></li>
+            <li class="btn_login"><a type="button" (click)="login()" *ngIf="!isLogged">login</a> </li>
+            <li class="btn_login"><a type="button" (click)="onLogOut()" *ngIf="isLogged">logout</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+
+    <section class="banner">
+
+                                        <!-- ///MODAL/// -->
+
+    <ng-template #contenido2 let-modalper >
+
+      <!-- Header -->
+      <div class="modal-header  ">
+        <h2  class="" style="color:black" > {{PerEnEdicion ? 'Editar experiencia' : 'Agregar una experiencia'}} </h2>
+
+         <img src="../../../assets/img/close.png"    class="close" aria-label="close" type="button" (click)="modalper.dismiss()" style="width: 20px; height: 20px;" >
+
+      </div>
+
+      <!-- BODY -->
+      <div class="modal-body">
+        <form [formGroup]="formularioPer" (ngSubmit)="save()" >
+          <ul class="down10 modall" >
+
+            <li><label for="nombre" style="color:black" >NOMBRE</label>
+              <input id="nombre" type="text" placeholder="Nombre" class="form-control" formControlName="nombre"
+                autocomplete="off">
+            </li>
+
+            <li><label for="descripcion" style="color:black" >DESCRIPCIÓN</label>
+              <input id="descripcion" type="text" placeholder="descripcion" class="form-control"
+                formControlName="descripcion" autocomplete="off">
+            </li>
+
+
+           <li>
+              <label for="url_foto" style="color:black" >URL FOTO</label>
+              <input id="url_foto" type="text" placeholder="url_foto" class="form-control"
+                formControlName="url_foto" autocomplete="off">
+            </li>
+
+
+
+            <li>
+              <label for="frase1" style="color:black" >FRASE TIPEABLE 1</label>
+              <input id="frase1" type="text" placeholder="frase1" class="form-control"
+                formControlName="frase1" autocomplete="off">
+            </li>
+
+            <li>
+              <label for="frase2" style="color:black" >FRASE TIPEABLE 2</label>
+              <input id="frase2" type="text" placeholder="frase2" class="form-control"
+                formControlName="frase2" autocomplete="off">
+            </li>
+
+            <!-- <button (click)="resetForm()">RESET</button> -->
+
+          </ul>
+          <div class="text-end down30 text-center mt-5">
+            <button class="btn btn-light" (click)="modalper.close">Guardar</button>
+
+          </div>
+        </form>
+      </div>
+
+
+    </ng-template>
+
+
+                                            <!-- MODAL -->
+
+
+   
+      <div class="container flex2" id="con">
+        
+        <div class="foto">
+          <!-- <div class="btn_edit"><img src="../../../assets/img/btn_editar.png" alt=""></div> -->
+          <img 
+            [src]="persona[0].url_foto" 
+            alt="Foto de perfil" 
+          />
+
+          <!-- <img src="../../../assets/img/btn_editar.png" alt=""> -->
+        </div>
+        <div class="acercaDe top20" id="con2">
+          <h3 class="abs">Hola soy <b>{{persona[0].nombre}}</b></h3>
+          <div class="btn_edit"><img src="../../../assets/img/btn_editar.png" type="button" (click)="editb(persona.id, contenido2)" *ngIf="isLogged" ng-hide="isLogged" ></div>
+          <ngx-typed-js [strings]="[persona[0].frase1, persona[0].frase2]"
+
+            [typeSpeed]="35"
+            [startDelay]="0"
+            [backSpeed]="25"
+            [smartBackspace]="true"
+            [shuffle]="false"
+            [backDelay]="2500"
+            [loop]="true"
+            [showCursor]="false"
+            [cursorChar]="'_'"
+            [contentType]="'html'"
+            >
+            <h1 class="typing  typ"></h1>
+          </ngx-typed-js>
+
+          <p class="pBanner">
+            {{persona[0].descripcion}}
+          </p>
+        </div>
+      </div>
+    </section>
+  </div>

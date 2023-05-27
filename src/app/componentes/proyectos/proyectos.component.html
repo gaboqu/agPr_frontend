@@ -1,0 +1,97 @@
+<section class="pr">
+    <div class="container">
+      <h1 class="down30">Proyectos</h1>
+      <div class="proyectos">
+
+        <div class="btn_agregar down30"> <img src="../../../assets/img/btn_crear.png"  type="button" (click)="ModalOpen4(contenidoPr) " alt="" *ngIf="isLogged" ng-hide="isLogged" ></div>
+        <div class="proyectos__contenedor">
+
+
+           <!-- ////////////////////////////---MODAL---////////////////////////////// -->
+    
+ <ng-template #contenidoPr let-modalPr >
+
+  <!-- Header -->
+  <div class="modal-header  ">
+    <h2  class="" style="color:black" > {{PrEnEdicion ? 'Editar Proyecto' : 'Agregar Proyecto'}} </h2>
+    
+     <img src="../../../assets/img/close.png"    class="close" aria-label="close" type="button" (click)="modalPr.dismiss()" style="width: 20px; height: 20px;" >
+    
+  </div> 
+
+  <!-- BODY -->
+  <div class="modal-body">
+    <form [formGroup]="formularioPr" (ngSubmit)="savePr()" >
+      <ul class="down10 modall" >
+
+        <li><label for="img" style="color:black" >URL IMAGEN</label>
+          <input id="img" type="text" placeholder="imagen" class="form-control"
+            formControlName="img" autocomplete="off">
+        </li>
+
+        <li><label for="url" style="color:black" >LINK DEL PROYECTO (URL)</label>
+          <input id="url" type="text" placeholder="url" class="form-control"
+            formControlName="url" autocomplete="off">
+        </li>
+
+        <li><label for="titulo" style="color:black" >TÍTULO</label>
+          <input id="titulo" type="text" placeholder="titulo" class="form-control" formControlName="titulo"
+            autocomplete="off">
+        </li>
+            
+        <li><label for="tecnologias" style="color:black" >TECNOLOGÍAS</label>
+          <input id="tecnologias" type="text" placeholder="tecnologias" class="form-control"
+            formControlName="tecnologias" autocomplete="off">
+        </li>
+
+        <li><label for="info" style="color:black" >INFORMACIÓN</label>
+          <input  id="info" type="text" placeholder="Info" class="form-control tx-cent" formControlName="info"
+            autocomplete="off">
+        </li>
+        
+        
+
+        <!-- <button (click)="resetForm()">RESET</button> -->
+                    
+      </ul>
+      <div class="text-end down30 text-center mt-5">
+        <button class="btn btn-light" (click)="modalPr.close">Guardar</button>
+        
+      </div>
+    </form>
+  </div>
+
+ 
+
+</ng-template>
+
+
+
+<!--XXXXXXXXXXXXXXXXXXXXXXXXXXX---MODAL---XXXXXXXXXXXXXXXXXXXXXXXXXXXX -->
+
+
+  
+          <div *ngFor="let proyecto of proy" class="proyectos__items ">
+
+            <!-- // BUTONSSS -->
+
+            
+            <a href="{{proyecto.url}}" target="blank"><img [src]="proyecto.img" alt="bastok proyecto web"></a>
+            <div class="relat">
+              <div class="btn_edit"><img src="../../../assets/img/btn_editar.png" type="button" (click)=" editP(proyecto.id, contenidoPr)" *ngIf="isLogged" ng-hide="isLogged">
+              </div>
+              <div class="btn_elim"><img src="../../../assets/img/btn_eliminar.png" type="button" (click)="delete(proyecto.id)" *ngIf="isLogged" ng-hide="isLogged">
+              </div>
+            </div>
+            <h3 class="top20 down20">{{proyecto.titulo}}</h3>
+            
+            <h4>Tecnologías:</h4>
+            <p class="green">{{proyecto.tecnologias}}</p>
+            <p>{{proyecto.info}}</p>
+          </div>
+  
+         
+        </div>
+      </div>
+    </div>
+  </section>

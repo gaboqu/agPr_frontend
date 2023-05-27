@@ -1,0 +1,23 @@
+.relat {
+    position: relative;
+}
+
+.btn_elim img{
+    position: absolute;
+    max-width: 20px;
+    right: 13px;
+    top:32px;
+    border-radius: 0%;
+    border: none;
+
+  }
+
+
+  .btn_edit img{
+    position: absolute;
+    max-width: 20px;
+    right: 45px;
+    top: 32px;
+    border-radius: 0%;
+    border: none;
+  }  

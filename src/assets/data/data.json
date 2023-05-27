@@ -1,0 +1,116 @@
+{
+    "acercaDe":{
+            "name": "Gabriel",
+            "image":"assets/img/perfil_foto.png",
+            "posicion":["Full Stack Developer Jr", "Multimedia Designer"],
+            "info": "Hola soy Gabriel Quiroga, de concordia Argentina. Actualmente desarrollandome en el área programación. Cuento con experiencia como diseñador multimedia trabajando en varias agencias e instituciones estatales."
+    },
+    "experiencias":[{
+            "img":"assets/img/alqubbo_logo.png",
+            "empresa":"Alqubbo",
+            "periodo":"Actualmente",
+            "tareas":"Diseño multimedia - Diseño web - Filmación + Edición de videos - Fotografía y edición"
+    },
+        {
+            "img":"assets/img/bastok_log.png",
+            "empresa":"Bastok",
+            "periodo":"Actualmente",
+            "tareas":"Diseño multimedia - Diseño web - Filmación + Edición de videos - Fotografía y edición"
+    },
+        {
+            "img":"assets/img/inti.png",
+            "empresa":"INTI",
+            "periodo":"2010 - 2018",
+            "tareas":"Diseño multimedia - Diseño apps de realidad Aumentada - 3d + Fx - Edición de videos"
+        },
+    
+        {
+            "img":"assets/img/tribi.png",
+            "empresa":"Tribi Soft",
+            "periodo":"2007 - 2008",
+            "tareas":"Diseño multimedia - Motion Graphics - 3d + Fx"
+    }],
+    "educacion":[
+        {
+            "img":"assets/img/ar-prog_logo.png",
+            "titulo":"Full Stack Developer Jr.",
+            "institucion":"Argentina Programa 2022-2023",
+            "info":"Desarrollo una aplicación web full stack, que mostrará: tus datos personales, estudios cursados, experiencia laboral, conocimiento de las tecnologías y lo que se desee agregar. Esta aplicación cuenta con una arquitectura distribuida y contiene un diseño de interfaz de usuario (front end) que muestra la información, una base de datos que almacena los datos antes mencionados y cuenta con las APIs necesarias para proveer a través de internet la información (back end)."
+        },
+        {
+            "img":"assets/img/coder_logo.jpg",
+            "titulo":"Desarrollador Web",
+            "institucion":"Coder House 2020-2021",
+            "info":"Desarrollo web, trabajando con HTML y CSS. Implementando prácticas de versionado de código con GIT, y preprocesador SASS. Conocimientos de como aplicar Bootstrap a tus proyectos, lo importante del SEO en tus desarrollos. Subir sitios a servidores e interacciones con este servicio."
+        },
+        {
+            "img":"assets/img/davinci.png",
+            "titulo":"Action Script 2",
+            "institucion":"Escuela Da Vinci 2010",
+            "info":"Desarrollo web, trabajando con HTML y CSS. Implementando prácticas de versionado de código con GIT, y preprocesador SASS. Conocimientos de como aplicar Bootstrap a tus proyectos, lo importante del SEO en tus desarrollos. Subir sitios a servidores e interacciones con este servicio.."
+        }],
+    "skills":[
+        {
+            "sk":"HTML",
+            "porcentaje":"90%"
+        },
+        {
+            "sk":"CSS",
+            "porcentaje":"70%"
+        },
+        {
+            "sk":"JS",
+            "porcentaje":"40%"
+        },
+        {
+            "sk":"JAVA",
+            "porcentaje":"50%"
+        },
+        {
+            "sk":"SLAK",
+            "porcentaje":"80%"
+        },
+        {
+            "sk":"JIRA",
+            "porcentaje":"70%"
+        },
+        {
+            "sk":"TRABAJO EN EQUIPO",
+            "porcentaje":"100%"
+        },
+        {
+            "sk":"SCRUM",
+            "porcentaje":"70%"
+        }
+    ],
+    "proyecto":[
+        {
+            "img":"assets/img/ag_prog.png",
+            "url":"",
+            "titulo":"Porfolio Argentina Programa",
+            "tecnologias":"html - css - angular - java - springboot - js",
+            "info":"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure deserunt libero quae commodi repellendus eos explicabo cum accusamus ab accusantium nostrum provident pariatur amet optio architecto voluptatibus doloremque, quisquam atque."
+        },
+        {
+            "img":"assets/img/bst.png",
+            "url":"https://gaboqu.github.io/bastok/",
+            "titulo":"Bastok Contenidos",
+            "tecnologias":"html - css - js",
+            "info":"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure deserunt libero quae commodi repellendus eos explicabo cum accusamus ab accusantium nostrum provident pariatur amet optio architecto voluptatibus doloremque, quisquam atque."
+        },
+        {
+            "img":"assets/img/semillero_dig.png",
+            "url":"https://gaboqu.github.io/semillero-digital/",
+            "titulo":"Semillero digital",
+            "tecnologias":"html - css",
+            "info":"Proyecto creado para el desafío Coder Hack (de Coder House) luego de haber culminado el curso de desarrollador web. Consistia en crear una web en 48hs desde el diseño a su ejecución. El propósito era colaborar con el desarrollo de Semillero Digital, una academia digital social que brinda capacitaciones en oficios digitales y mentoreo profesional, a jóvenes en situación de pobreza económica con el objetivo de estimular su incersión en el mundo laboral digital."
+        },
+        {
+            "img":"assets/img/astro_fem.png",
+            "url":"https://astrofeminista.com.ar/",
+            "titulo":"Astrofeminista",
+            "tecnologias":"html - css - js - php",
+            "info":"Proyecto web realizado para la marca astrofeminista, cuenta con una pagina donde aparecen todas las seciones que van apareciendo al hacer scroll y tambíen una plataforma de elearning creada con wordpress."
+        }]
+
+}

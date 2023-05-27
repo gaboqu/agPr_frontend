@@ -1,0 +1,86 @@
+<section class="experiencias">
+  <div class="container">
+   
+      <h1 class="down30">Experiencias</h1>
+     
+     
+      <div class="btn_agregar down30"> <img src="../../../assets/img/btn_crear.png"  type="button"
+        (click)="ModalOpen(contenido) " alt="" *ngIf="isLogged" ng-hide="isLogged"></div>
+      
+   
+
+    <!-- ///MODAL/// -->
+    
+    <ng-template #contenido let-modal >
+
+      <!-- Header -->
+      <div class="modal-header  ">
+        <h2  class="" style="color:black" > {{ExpEnEdicion ? 'Editar experiencia' : 'Agregar una experiencia'}} </h2>
+        
+         <img src="../../../assets/img/close.png"    class="close" aria-label="close" type="button" (click)="modal.dismiss()" style="width: 20px; height: 20px;" >
+        
+      </div> 
+
+      <!-- BODY -->
+      <div class="modal-body">
+        <form [formGroup]="formulario" (ngSubmit)="save()" >
+          <ul class="down10 modall" >
+
+            <li><label for="empresa" style="color:black" >EMPRESA</label>
+              <input id="empresa" type="text" placeholder="Empresa" class="form-control" formControlName="empresa"
+                autocomplete="off">
+            </li>
+                
+            <li><label for="fechas" style="color:black" >FECHAS</label>
+              <input id="fechas_ing_egr" type="text" placeholder="Fechas de ingreso y egreso" class="form-control"
+                formControlName="fechas_ing_egr" autocomplete="off">
+            </li>
+
+            <li><label for="funciones" style="color:black" >FUNCIONES</label>
+              <input  id="funciones" type="text" placeholder="Funciones" class="form-control tx-cent" formControlName="funciones"
+                autocomplete="off">
+            </li>
+            
+            <li>
+              <label for="url_logo_exp" style="color:black" >URL LOGO</label>
+              <input id="url_logo_exp" type="text" placeholder="Url_logo_exp" class="form-control"
+                formControlName="url_logo_exp" autocomplete="off">
+            </li>
+
+            <!-- <button (click)="resetForm()">RESET</button> -->
+                        
+          </ul>
+          <div class="text-end down30 text-center mt-5">
+            <button class="btn btn-light" (click)="modal.close">Guardar</button>
+            
+          </div>
+        </form>
+      </div>
+
+     
+
+    </ng-template>
+
+
+    <div class=" ww " >
+      <div  *ngFor="let exp of exp"  class="card_exp abs" >
+        <div>
+
+          
+          <div class="btn_edit"><img src="../../../assets/img/btn_editar.png" type="button" (click)=" edit(exp.id, contenido)" *ngIf="isLogged" ng-hide="isLogged" ></div>
+
+          
+          <div class="btn_elim"><img src="../../../assets/img/btn_eliminar.png" type="button" (click)="delete(exp.id)" *ngIf="isLogged" ng-hide="isLogged"></div>
+        </div>
+        
+        <!-- <div class="btn_edit"><img src="img/btn_editar.png" alt=""></div> -->
+        <img class="img_exp down20" [src]="exp.url_logo_exp" alt="" />
+        <h2 class="">{{ exp.empresa }}</h2>
+        <h4>{{ exp.fechas_ing_egr }}</h4>
+        <p class="top10">
+          {{ exp.funciones }}
+        </p>
+      </div>
+    </div>
+  </div>
+</section>

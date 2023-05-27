@@ -1,0 +1,97 @@
+<section class="educacion">
+
+  <div class="container">
+
+    <h1 class="down30">Educación</h1>
+
+
+ <!-- ////////////////////////////---MODAL---////////////////////////////// -->
+    
+ <ng-template #contenidoEd let-modalEd >
+
+  <!-- Header -->
+  <div class="modal-header  ">
+    <h2  class="" style="color:black" > {{EduEnEdicion ? 'Editar educación' : 'Agregar educación'}} </h2>
+    
+     <img src="../../../assets/img/close.png"    class="close" aria-label="close" type="button" (click)="modalEd.dismiss()" style="width: 20px; height: 20px;" >
+    
+  </div> 
+
+  <!-- BODY -->
+  <div class="modal-body">
+    <form [formGroup]="formularioEd" (ngSubmit)="saveEd()" >
+      <ul class="down10 modall" >
+
+        <li><label for="titulo" style="color:black" >TÍTULO</label>
+          <input id="titulo" type="text" placeholder="titulo" class="form-control" formControlName="titulo"
+            autocomplete="off">
+        </li>
+            
+        <li><label for="institucion" style="color:black" >INSTITUCIÓN</label>
+          <input id="institucion" type="text" placeholder="Institución" class="form-control"
+            formControlName="institucion" autocomplete="off">
+        </li>
+
+        <li><label for="info" style="color:black" >INFORMACIÓN</label>
+          <input  id="info" type="text" placeholder="Info" class="form-control tx-cent" formControlName="info"
+            autocomplete="off">
+        </li>
+        
+        <li>
+          <label for="img" style="color:black" >URL LOGO</label>
+          <input id="igm" type="text" placeholder="Imagen" class="form-control"
+            formControlName="img" autocomplete="off">
+        </li>
+
+        <!-- <button (click)="resetForm()">RESET</button> -->
+                    
+      </ul>
+      <div class="text-end down30 text-center mt-5">
+        <button class="btn btn-light" (click)="modalEd.close">Guardar</button>
+        
+      </div>
+    </form>
+  </div>
+
+ 
+
+</ng-template>
+
+
+
+<!--XXXXXXXXXXXXXXXXXXXXXXXXXXX---MODAL---XXXXXXXXXXXXXXXXXXXXXXXXXXXX -->
+
+
+
+    
+
+    <div class="btn_agregar down30"> <img src="../../../assets/img/btn_crear.png"  type="button" (click)="ModalOpen2(contenidoEd) " alt="" *ngIf="isLogged" ng-hide="isLogged" ></div>
+
+    <!-- (click)="ModalOpen(contenido) " alt="" *ngIf="isLogged" ng-hide="isLogged" -->
+
+  <div *ngFor="let edu of edu" class="edu down20 relat">
+    
+    <!-- // BUTONSSS -->
+    <div>
+    <div class="btn_edit"><img src="../../../assets/img/btn_editar.png" type="button" (click)=" editEd(edu.id, contenidoEd)" *ngIf="isLogged" ng-hide="isLogged">
+    </div>
+    <div class="btn_elim"><img src="../../../assets/img/btn_eliminar.png" type="button" (click)="delete(edu.id)" *ngIf="isLogged" ng-hide="isLogged">
+    </div>
+  </div>
+    
+    <img [src]="edu.img" alt="">
+    <div class="info">
+      
+      
+      <h3>{{edu.titulo}}</h3>
+      <h4>{{edu.institucion}}</h4>
+
+      <p>{{edu.info}}</p>
+    </div>
+  </div>
+  
+      
+  
+    </div>
+  
+  </section>

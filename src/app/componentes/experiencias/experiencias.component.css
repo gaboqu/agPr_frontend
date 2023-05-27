@@ -1,0 +1,41 @@
+.ww{
+    display: flex;
+    /* align-items: center; */
+    flex-wrap: wrap;
+    margin: auto;
+    justify-content:flex-start;
+    gap:0 0px;
+}
+
+
+.tx-cent{
+    align-items: center;
+    margin: auto;
+}
+
+
+.modal .modal-content {
+    background-color: #14172a;
+    color:white;
+}
+
+.oscuro .close {
+    color: white;
+}
+
+.azul {
+    background-color: #14172a;
+}
+
+.modall li {
+    padding: 10px;
+}
+
+.modal label {
+    margin-bottom: 10px;
+    
+}
+
+.modal-header {
+    margin: 20px;
+}

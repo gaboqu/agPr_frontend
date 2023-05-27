@@ -1,0 +1,38 @@
+<app-nav></app-nav>
+<div class="signupFrm">
+    <form #f="ngForm" (ngSubmit)="onLogin()" novalidate class="form">
+
+       <div class="flex ">
+         
+         <h2 class="down30 top20">Login</h2>
+
+         <div class="logo2">
+            <img src="assets/img/candado-abierto.png" alt="">
+        </div>
+        
+       </div> 
+
+        <div class="inputContainer">
+            <input type="email" id="nombreUsuario" name="nombreUsuario" class="input"
+                    [(ngModel)]="nombreUsuario" required />
+                  <label class="label" for="nombreUsuario">Usuario</label>
+        </div>
+
+        <div class="inputContainer">
+            <input type="password" id="password" name="password" class="input" [(ngModel)]="password"
+                    required />
+                  <label class="label"  for="password">Password</label>
+        </div>
+
+
+        <div class="flex mb-4 mt-5 anone">
+            <input type="submit" class="submitBtn" value="Ingresar">
+            <!-- <a href="registro"><input type="button" class="submitBtn" value="Registrarse"></a> -->
+           
+        </div>
+
+       
+    </form>
+
+    
+</div>

@@ -1,0 +1,76 @@
+<section class="sk">
+    <div class="container">
+      <h1 class="down30">Skills</h1>
+  
+      <div class="skills">
+        <div class="btn_agregar down30"> <img src="../../../assets/img/btn_crear.png"  type="button" (click)="ModalOpen3(contenidoSk) " alt="" *ngIf="isLogged" ng-hide="isLogged" ></div>
+  
+        <div *ngFor="let skill of skill" class="skillbox">
+
+              <!-- // BUTONSSS -->
+
+        <div class="relat">
+          <div class="btn_edit"><img src="../../../assets/img/btn_editar.png" type="button" (click)=" editS(skill.id, contenidoSk)" *ngIf="isLogged" ng-hide="isLogged">
+          </div>
+          <div class="btn_elim"><img src="../../../assets/img/btn_eliminar.png" type="button" (click)="delete(skill.id)" *ngIf="isLogged" ng-hide="isLogged">
+          </div>
+        </div>
+
+          <div class="item-sk">
+            <p>{{skill.sk}}</p>
+            <p></p>
+          </div>
+          <div class="skill">
+            <div class="skill_level" [style.width]="skill.porcentaje"></div>
+          </div>
+        </div>
+  
+      </div>
+    </div>
+
+     <!-- ////////////////////////////---MODAL---////////////////////////////// -->
+    
+ <ng-template #contenidoSk let-modalSk >
+
+  <!-- Header -->
+  <div class="modal-header  ">
+    <h2  class="" style="color:black" > {{SkEnEdicion ? 'Editar Skill' : 'Agregar Skill'}} </h2>
+    
+     <img src="../../../assets/img/close.png"    class="close" aria-label="close" type="button" (click)="modalSk.dismiss()" style="width: 20px; height: 20px;" >
+    
+  </div> 
+
+  <!-- BODY -->
+  <div class="modal-body">
+    <form [formGroup]="formularioSk" (ngSubmit)="saveEd()" >
+      <ul class="down10 modall" >
+
+        <li><label for="sk" style="color:black" >SKILL</label>
+          <input id="sk" type="text" placeholder="sk" class="form-control" formControlName="sk"
+            autocomplete="off">
+        </li>
+        <span><p></p></span>
+        <li class="down30"><label for="porcentaje" style="color:black" >PORCENTAJE (agregar signo % luego del numero!)</label>
+          <input id="porcentaje" type="text" placeholder="porcentaje" class="form-control"
+            formControlName="porcentaje" autocomplete="off">
+        </li>
+
+        <!-- <button (click)="resetForm()">RESET</button> -->
+                    
+      </ul>
+      <div class="text-end down30 text-center mt-5">
+        <button class="btn btn-light" (click)="modalSk.close">Guardar</button>
+        
+      </div>
+    </form>
+  </div>
+
+ 
+
+</ng-template>
+
+
+
+<!--XXXXXXXXXXXXXXXXXXXXXXXXXXX---MODAL---XXXXXXXXXXXXXXXXXXXXXXXXXXXX -->
+
+  </section>
